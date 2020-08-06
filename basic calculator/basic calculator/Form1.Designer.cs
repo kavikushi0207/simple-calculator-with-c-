@@ -132,6 +132,8 @@
             this.btnequal.TabIndex = 18;
             this.btnequal.Text = "=";
             this.btnequal.UseVisualStyleBackColor = false;
+            
+            this.btnequal.Click += new System.EventHandler(this.btnequal_Click);
             // 
             // btnadd
             // 
@@ -144,6 +146,7 @@
             this.btnadd.TabIndex = 17;
             this.btnadd.Text = "+";
             this.btnadd.UseVisualStyleBackColor = false;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // btnDot
             // 
@@ -208,6 +211,7 @@
             this.btnsub.TabIndex = 12;
             this.btnsub.Text = "-";
             this.btnsub.UseVisualStyleBackColor = false;
+            this.btnsub.Click += new System.EventHandler(this.btnsub_Click);
             // 
             // btn1
             // 
@@ -272,6 +276,7 @@
             this.btnmulti.TabIndex = 7;
             this.btnmulti.Text = "x";
             this.btnmulti.UseVisualStyleBackColor = false;
+            this.btnmulti.Click += new System.EventHandler(this.btnmulti_Click);
             // 
             // btn9
             // 
@@ -323,6 +328,7 @@
             this.btndivide.TabIndex = 3;
             this.btndivide.Text = "/";
             this.btndivide.UseVisualStyleBackColor = false;
+            this.btndivide.Click += new System.EventHandler(this.btndivide_Click);
             // 
             // btnONN
             // 
@@ -349,6 +355,7 @@
             this.btnBack.Size = new System.Drawing.Size(53, 49);
             this.btnBack.TabIndex = 1;
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnCE
             // 
@@ -396,6 +403,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnOff;
         private System.Windows.Forms.Label lblEquation;
         private System.Windows.Forms.TextBox txtAns;
         private System.Windows.Forms.Button btnequal;
@@ -418,7 +426,7 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnCE;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnOff;
+
 
     }
 }

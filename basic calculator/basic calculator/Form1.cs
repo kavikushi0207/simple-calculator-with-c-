@@ -15,6 +15,10 @@ namespace basic_calculator
         {
             InitializeComponent();
         }
+
+        float ans, num;
+        int count;
+
         public void disable()
         {
             btnOff.Hide();
@@ -68,32 +72,40 @@ namespace basic_calculator
         }
         private void btn0_Click(object sender, EventArgs e)
         {
+            
             txtAns.Text = txtAns.Text + "0";
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
+            if (btnequal.Focused==true) {
+                txtAns.Clear();
+            }
             txtAns.Text = txtAns.Text + "1";
         }
 
         private void btnCE_Click(object sender, EventArgs e)
         {
             txtAns.Text = "";
+            lblEquation.Text = "";
         }
 
        
         private void btnDot_Click(object sender, EventArgs e)
         {
+            
             txtAns.Text = txtAns.Text + ".";
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
+            
             txtAns.Text = txtAns.Text + "4";
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
+            
             txtAns.Text = txtAns.Text + "5";
         }
 
@@ -136,6 +148,106 @@ namespace basic_calculator
         {
             enable();
         }
+
+        public void operations()
+        {
+            switch (count)
+            {
+                case 1:
+                    ans = num + float.Parse(txtAns.Text);
+                    txtAns.Text = ans.ToString();
+                    break;
+                case 2:
+                    ans = num - float.Parse(txtAns.Text);
+                    txtAns.Text = ans.ToString();
+                    break;
+                case 3:
+                    ans = num * float.Parse(txtAns.Text);
+                    txtAns.Text = ans.ToString();
+                    break;
+                case 4:
+                    ans = num / float.Parse(txtAns.Text);
+                    txtAns.Text = ans.ToString();
+                    break;
+                default :
+                    break;
+            }
+
+        }
+
+        private void btnadd_Click(object sender, EventArgs e)
+        {
+            num = float.Parse(txtAns.Text);
+            txtAns.Clear();
+            txtAns.Focus();
+            count = 1;
+            lblEquation.Text = num.ToString() + "+";
+        }
+
+        private void btnsub_Click(object sender, EventArgs e)
+        {
+            num = float.Parse(txtAns.Text);
+            txtAns.Clear();
+            txtAns.Focus();
+            count = 2;
+            lblEquation.Text = num.ToString() + "-";
+        }
+
+        private void btnmulti_Click(object sender, EventArgs e)
+        {
+            num = float.Parse(txtAns.Text);
+            txtAns.Clear();
+            txtAns.Focus();
+            count = 3;
+            lblEquation.Text = num.ToString() + "x";
+        }
+
+        private void btndivide_Click(object sender, EventArgs e)
+        {
+            num = float.Parse(txtAns.Text);
+            txtAns.Clear();
+            txtAns.Focus();
+            count = 4;
+            lblEquation.Text = num.ToString() + "/";
+        }
+
+        private void btnequal_Click(object sender, EventArgs e)
+        {
+            operations();
+            lblEquation.Text = "";
+            if (txtAns.Text ==  "...")
+            {
+                MessageBox.Show("Syntax Error");
+            }
+            
+            
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            int length = txtAns.TextLength - 1;
+            string text = txtAns.Text;
+            txtAns.Clear();
+            for (int i = 0; i < length;i++ ) {
+                txtAns.Text = txtAns.Text + text[i];
+            }
+
+
+        }
+
+       /* private void btnequal_TabIndexChanged(object sender, EventArgs e)
+        {
+            txtAns.Clear();
+        }*/
+
+
+        
+       
+
+        
+
+        
+
 
        
 
