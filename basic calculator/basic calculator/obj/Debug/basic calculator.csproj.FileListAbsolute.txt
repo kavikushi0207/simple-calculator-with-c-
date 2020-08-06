@@ -1,0 +1,8 @@
+C:\Users\Madhu\Documents\c# projects new\basic calculator\basic calculator\bin\Debug\basic calculator.exe
+C:\Users\Madhu\Documents\c# projects new\basic calculator\basic calculator\bin\Debug\basic calculator.pdb
+C:\Users\Madhu\Documents\c# projects new\basic calculator\basic calculator\obj\Debug\basic calculator.csprojResolveAssemblyReference.cache
+C:\Users\Madhu\Documents\c# projects new\basic calculator\basic calculator\obj\Debug\basic_calculator.Form1.resources
+C:\Users\Madhu\Documents\c# projects new\basic calculator\basic calculator\obj\Debug\basic_calculator.Properties.Resources.resources
+C:\Users\Madhu\Documents\c# projects new\basic calculator\basic calculator\obj\Debug\basic calculator.csproj.GenerateResource.Cache
+C:\Users\Madhu\Documents\c# projects new\basic calculator\basic calculator\obj\Debug\basic calculator.exe
+C:\Users\Madhu\Documents\c# projects new\basic calculator\basic calculator\obj\Debug\basic calculator.pdb
