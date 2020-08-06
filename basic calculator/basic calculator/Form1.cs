@@ -18,6 +18,25 @@ namespace basic_calculator
 
         float ans, num;
         int count;
+        bool keyStart ;
+        public void dotRepeat()
+        {
+            string number = txtAns.Text;
+            int count1 = 0;
+            for (int i = 0; i < number.Length-1; i++)
+            {
+                if (number[i].Equals("."))
+                {
+                    count1 ++;
+                }
+
+            }
+            if (count1 >= 2)
+            {
+                MessageBox.Show("syntax error");
+                txtAns.Clear();
+            }
+        }
 
         public void disable()
         {
@@ -73,15 +92,26 @@ namespace basic_calculator
         private void btn0_Click(object sender, EventArgs e)
         {
             
+            if (keyStart == true)
+            {
+                txtAns.Clear();
+
+            }
             txtAns.Text = txtAns.Text + "0";
+            keyStart = false;
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            if (btnequal.Focused==true) {
+            
+            if (keyStart == true)
+            {
                 txtAns.Clear();
+
             }
+
             txtAns.Text = txtAns.Text + "1";
+            keyStart = false;
         }
 
         private void btnCE_Click(object sender, EventArgs e)
@@ -93,50 +123,118 @@ namespace basic_calculator
        
         private void btnDot_Click(object sender, EventArgs e)
         {
-            
+           
+            if (keyStart == true)
+            {
+                txtAns.Clear();
+
+            }
             txtAns.Text = txtAns.Text + ".";
+            if (txtAns.Text.StartsWith(".") || txtAns.Text.Contains("..") )
+            {
+                MessageBox.Show("syntax error");
+                txtAns.Clear();
+            }
+            dotRepeat();
+            
+
+            keyStart = false;
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            
+            //keyStart = false;
+            if (keyStart == true)
+            {
+                txtAns.Clear();
+
+            }
             txtAns.Text = txtAns.Text + "4";
+            keyStart = false;
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            
+            //keyStart = false;
+            if (keyStart == true)
+            {
+                txtAns.Clear();
+
+            }
             txtAns.Text = txtAns.Text + "5";
+            keyStart = false;
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
+            //keyStart = false;
+            if (keyStart == true)
+            {
+                txtAns.Clear();
+
+            }
             txtAns.Text = txtAns.Text + "6";
+            keyStart = false;
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
+            //keyStart = false;
+            if (keyStart == true)
+            {
+                txtAns.Clear();
+
+            }
             txtAns.Text = txtAns.Text + "7";
+            keyStart = false;
         }
 
         private void btn8_Click(object sender, EventArgs e)
         {
+            //keyStart = false;
+            if (keyStart == false)
+            {
+                txtAns.Clear();
+
+            }
             txtAns.Text = txtAns.Text + "8";
+            keyStart = false;
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
+            //keyStart = false;
+            if (keyStart == true)
+            {
+                txtAns.Clear();
+
+            }
             txtAns.Text = txtAns.Text + "9";
+            keyStart = false;
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
+            //keyStart = false;
+            if (keyStart == true)
+            {
+                txtAns.Clear();
+
+            }
             txtAns.Text = txtAns.Text + "3";
+            keyStart = false;
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
+            //keyStart = false;
+            if (keyStart == true)
+            {
+                txtAns.Clear();
+
+            }
             txtAns.Text = txtAns.Text + "2";
+            keyStart = false;
         }
 
         private void btnOff_Click(object sender, EventArgs e)
@@ -177,24 +275,29 @@ namespace basic_calculator
 
         private void btnadd_Click(object sender, EventArgs e)
         {
+            dotRepeat();
             num = float.Parse(txtAns.Text);
             txtAns.Clear();
             txtAns.Focus();
             count = 1;
             lblEquation.Text = num.ToString() + "+";
+            
         }
 
         private void btnsub_Click(object sender, EventArgs e)
         {
+            dotRepeat();
             num = float.Parse(txtAns.Text);
             txtAns.Clear();
             txtAns.Focus();
             count = 2;
             lblEquation.Text = num.ToString() + "-";
+            
         }
 
         private void btnmulti_Click(object sender, EventArgs e)
         {
+            dotRepeat();
             num = float.Parse(txtAns.Text);
             txtAns.Clear();
             txtAns.Focus();
@@ -204,6 +307,7 @@ namespace basic_calculator
 
         private void btndivide_Click(object sender, EventArgs e)
         {
+            dotRepeat();
             num = float.Parse(txtAns.Text);
             txtAns.Clear();
             txtAns.Focus();
@@ -213,13 +317,11 @@ namespace basic_calculator
 
         private void btnequal_Click(object sender, EventArgs e)
         {
+            dotRepeat();
             operations();
-            lblEquation.Text = "";
-            if (txtAns.Text ==  "...")
-            {
-                MessageBox.Show("Syntax Error");
-            }
             
+            lblEquation.Text = "";
+            keyStart = true;
             
         }
 
